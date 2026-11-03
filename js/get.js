@@ -28,7 +28,7 @@ async function buscarGadgets() {
       
       const card = modelo.content.cloneNode(true);
 
-      card.querySelector(".title").textContent = gadget.title;
+      card.querySelector(".nome").textContent = gadget.title;
       card.querySelector(".categoria").textContent = gadget.categoria;
       card.querySelector(".marca").textContent = gadget.marca;
       card.querySelector(".ano_lancamento").textContent = gadget.ano_lancamento;
