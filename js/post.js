@@ -1,28 +1,17 @@
-// 1 . Selecionar os elementos do html
-// Que vai ser o forms
 const form = document.querySelector("#form-gadget");
 
 const resposta = document.querySelector("#resposta");
 
-// 2 . Comunicacao com a API
-// Lembrete o codeverse tem APIKey ou seja senha nas req.
+const apiKey = "cv_x7oLfm8-nJ296jVjR0NXLw7tEJsDOF6ql5YPu5KIas10BItNB-YjfpKgcNXEJ0-9";
 
-const apiKey = "cv_60mgpHYiS3bwJnrLd0XIfm9X1TBXotrRjcTeTt7095yCfrBusj8LgDaU6OK19ubZ";
-
-// Tem que falar o link (endpoint)
 const apiUrl = "https://api-ds.codeverse.dev.br/api/gadgets";
 
-// 3. Capturar o evento de click do form
 
 form.addEventListener("submit", async function (event) {
-  //impede o comportamento padrao do forms, recarregar ou navegar para outra pagina automaticamente.
+
   event.preventDefault();
 
-  //pegar os dados do form.
-
   const dados =  new FormData(form);
-
-  //organizar esse objeto e montar
 
   const dispositivo = {
       title: dados.get("title"),
@@ -35,11 +24,6 @@ form.addEventListener("submit", async function (event) {
 
   resposta.textContent = "Enviando dispositivo para a API....";
 
-// 5 . Enviando a req para a API.
-
-//trycatch é um bloco do js que executa alguma coisa que pode ter erros.
-// caso aconteça um erro, (qq tipo) o bloco catch trata esse erro.
-
 try {
 
   const respostaApi = await fetch(apiUrl, {
@@ -48,8 +32,6 @@ try {
       "Content-Type": "application/json",
       "x-api-key": apiKey,
     },
-
-    //enviar os dados
 
     body: JSON.stringify(dispositivo),
   });

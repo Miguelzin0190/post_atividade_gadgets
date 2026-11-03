@@ -11,9 +11,25 @@ body {
   padding: 20px;
 }
 
-header,
-footer {
+header {
   background-color: #1d4ed8;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  text-decoration: none;
+  background-color: #e0f2fe;
+  padding: 10px;
+  border-radius: 8px;
+  color: black;
+}
+
+footer {
+    background-color: #1d4ed8;
   color: white;
   padding: 20px;
 }
